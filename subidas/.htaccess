@@ -1,0 +1,5 @@
+# Aquí solo se guardan fotos: nada de esta carpeta se ejecuta como programa
+<FilesMatch "\.(php\d?|phtml|phar)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes

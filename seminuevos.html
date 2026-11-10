@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autos seminuevos — IGRIS</title>
+  <meta name="description" content="Autos seminuevos disponibles: filtra por marca, modelo, año y precio.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="seminuevos">
+
+  <main>
+    <section class="encabezado">
+      <div class="contenedor">
+        <nav class="cambio" aria-label="Sección">
+          <a href="seminuevos.html" class="activo" aria-current="page">Seminuevos</a>
+          <a href="autopartes.html">Autopartes</a>
+        </nav>
+        <h1>Autos seminuevos</h1>
+        <p>Unidades completas, revisadas y con papeles en regla.</p>
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <form class="filtro" id="filtro" autocomplete="off">
+        <label class="campo campo--ancho">Buscar
+          <input type="search" name="buscar" placeholder="Ej. Versa automático">
+        </label>
+        <label class="campo">Marca
+          <select name="marca"></select>
+        </label>
+        <label class="campo">Modelo
+          <select name="modelo"></select>
+        </label>
+        <label class="campo">Año
+          <select name="anio"></select>
+        </label>
+        <label class="campo">Precio máximo
+          <select name="precio">
+            <option value="">Sin límite</option>
+            <option value="200000">Hasta $200,000</option>
+            <option value="250000">Hasta $250,000</option>
+            <option value="300000">Hasta $300,000</option>
+            <option value="400000">Hasta $400,000</option>
+          </select>
+        </label>
+        <button class="boton boton--linea" type="reset">Limpiar</button>
+      </form>
+
+      <section class="seccion seccion--lista">
+        <div class="seccion__cabeza">
+          <h2>Últimos agregados <small id="conteo"></small></h2>
+          <label class="orden">Ordenar
+            <select name="orden" form="filtro">
+              <option value="">Más recientes</option>
+              <option value="menor">Precio: menor a mayor</option>
+              <option value="mayor">Precio: mayor a menor</option>
+            </select>
+          </label>
+        </div>
+        <div class="rejilla" id="resultados"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="api/datos.php"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

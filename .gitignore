@@ -1,0 +1,24 @@
+# Fotos que se suben desde el panel (la carpeta se conserva con su .htaccess)
+subidas/*
+!subidas/.htaccess
+
+# Correos de prueba y archivos internos
+storage/*
+!storage/.htaccess
+
+# Respaldos y bases de datos con datos reales (el esquema sí se sube)
+*.sql
+!api/esquema.sql
+*.zip
+*.rar
+
+# Credenciales y variables de entorno
+.env
+.env.*
+
+# Editor y sistema
+.vscode/
+.idea/
+*.log
+Thumbs.db
+.DS_Store

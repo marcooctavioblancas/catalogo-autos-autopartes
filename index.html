@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IGRIS — Autos seminuevos y autopartes</title>
+  <meta name="description" content="Autos seminuevos revisados y autopartes usadas por pieza. Consulta fotos, especificaciones y disponibilidad.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="inicio">
+
+  <main>
+    <section class="portada">
+      <div class="contenedor">
+        <p class="ceja">Inventario actualizado</p>
+        <h1>¿Qué estás buscando?</h1>
+        <p class="portada__texto">Autos completos listos para estrenar dueño, o la pieza exacta que le falta al tuyo.</p>
+
+        <div class="opciones">
+          <a class="opcion opcion--clara" href="seminuevos.html">
+            <svg class="opcion__fondo" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40q0-7 7-8l9-2q7-9 16-9h6q9 0 15 9l4 2q5 2 5 8v3q0 2-2 2h-5a7 7 0 0 0-14 0H27a7 7 0 0 0-14 0H8q-2 0-2-2z"/><circle cx="20" cy="45" r="5"/><circle cx="54" cy="45" r="5"/></svg>
+            <span class="opcion__ceja">Autos completos</span>
+            <span class="opcion__titulo">Seminuevos</span>
+            <span class="opcion__texto">Fotos, kilometraje y ficha técnica de cada unidad.</span>
+            <span class="opcion__pie"><span data-conteo="seminuevos"></span><b>Ver autos</b></span>
+          </a>
+          <a class="opcion opcion--oscura" href="autopartes.html">
+            <svg class="opcion__fondo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="9"/><path d="M28 6h8l1.500 7 5 2 6-4 5.500 5.500-4 6 2 5 7 1.500v8l-7 1.500-2 5 4 6-5.500 5.500-6-4-5 2L36 58h-8l-1.500-7-5-2-6 4L10 47.500l4-6-2-5L5 35v-8l7-1.500 2-5-4-6L15.500 9l6 4 5-2z"/></svg>
+            <span class="opcion__ceja">Venta por pieza</span>
+            <span class="opcion__titulo">Autopartes</span>
+            <span class="opcion__texto">Elige el vehículo y revisa qué piezas hay en existencia.</span>
+            <span class="opcion__pie"><span data-conteo="autopartes"></span><b>Ver piezas</b></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion contenedor" id="vistos" hidden>
+      <div class="seccion__cabeza"><h2>Vistos recientemente</h2></div>
+      <div class="rejilla"></div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="seccion__cabeza">
+        <h2>Últimos seminuevos agregados</h2>
+        <a class="enlace" href="seminuevos.html">Ver todos</a>
+      </div>
+      <div class="rejilla" id="ultimos-seminuevos"></div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="seccion__cabeza">
+        <h2>Últimos autos para autopartes</h2>
+        <a class="enlace" href="autopartes.html">Ver todos</a>
+      </div>
+      <div class="rejilla" id="ultimos-autopartes"></div>
+    </section>
+
+    <section class="pasos">
+      <div class="contenedor pasos__rejilla">
+        <div><b>1</b><h3>Busca</h3><p>Filtra por marca, modelo y año hasta dar con el auto o la pieza.</p></div>
+        <div><b>2</b><h3>Arma tu ticket</h3><p>Agrega lo que te interesa y genera un folio de referencia. No es una compra.</p></div>
+        <div><b>3</b><h3>Cierra por WhatsApp</h3><p>Envía tu ticket y te confirmamos precio, existencia y entrega.</p></div>
+      </div>
+    </section>
+
+    <section class="ubicacion" id="ubicacion"></section>
+  </main>
+
+  <script src="api/datos.php"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+services:
+  web:
+    build: ./docker
+    ports: ["8080:80"]
+    volumes:
+      - .:/var/www/html
+      - ./docker/config.php:/var/www/html/api/config.php:ro
+    depends_on:
+      db: { condition: service_healthy }
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: igris
+      MYSQL_USER: igris
+      MYSQL_PASSWORD: igris
+    ports: ["3307:3306"]
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./api/esquema.sql:/docker-entrypoint-initdb.d/esquema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      retries: 20
+volumes:
+  dbdata:

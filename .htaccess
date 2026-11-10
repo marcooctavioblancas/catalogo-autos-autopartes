@@ -1,0 +1,16 @@
+# La página de inicio
+DirectoryIndex index.html
+
+# No mostrar el contenido de las carpetas
+Options -Indexes
+
+# Archivos que nadie debe poder descargar
+<FilesMatch "\.(sql|log|ini)$">
+  Require all denied
+</FilesMatch>
+
+# Límites para subir fotos desde el panel
+<IfModule mod_php.c>
+  php_value upload_max_filesize 8M
+  php_value post_max_size 10M
+</IfModule>
